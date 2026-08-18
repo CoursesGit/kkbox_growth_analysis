@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "a4f27c6d9e8b43f2a101",
+  "displayName": "来源诊断",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280
+}

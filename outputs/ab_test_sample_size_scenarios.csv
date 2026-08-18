@@ -1,0 +1,4 @@
+﻿scenario,baseline_rate,target_rate,absolute_mde,relative_mde,required_sample_per_group,total_required_sample,historical_avg_daily_eligible_users,recruitment_days,outcome_maturation_days,total_calendar_days
+Scenario A,0.023708485478262382,0.02670848547826238,0.003,0.1265369735553379,42823,85646,6890.36,13,30,43
+Scenario B,0.023708485478262382,0.028708485478262383,0.005,0.2108949559255632,15990,31980,6890.36,5,30,35
+Scenario C,0.023708485478262382,0.033708485478262384,0.01,0.4217899118511264,4345,8690,6890.36,2,30,32

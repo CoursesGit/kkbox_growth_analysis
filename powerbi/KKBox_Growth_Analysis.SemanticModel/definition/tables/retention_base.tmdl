@@ -1,0 +1,263 @@
+table retention_base
+	lineageTag: 7fc32fea-b098-441b-8fbd-c1dadf14bd4c
+
+	measure 'New Users' = DISTINCTCOUNT(retention_base[msno])
+		formatString: #,0
+		lineageTag: 8bd1ad32-280a-44ef-9919-9cdb4ae9b854
+
+	measure 'D7 Retention' = AVERAGE(retention_base[d7_retained])
+		formatString: 0.00%
+		lineageTag: 2269167b-8649-45e2-9fab-b109bdcc9e69
+
+	measure 'D30 Retention' = AVERAGE(retention_base[d30_retained])
+		formatString: 0.00%
+		lineageTag: 542bbb53-a231-44b2-8a75-bccce7d93511
+
+	measure 'Avg First 7D Active Days' = AVERAGE(retention_base[first_7d_active_days])
+		formatString: 0.00
+		lineageTag: 8a7fd945-d5b7-40e3-bfb2-9ed02c5a230e
+
+	measure 'D30 Oct 1-6' = CALCULATE([D30 Retention], retention_base[Analysis Period] = "Oct 1-6")
+		formatString: 0.00%
+		lineageTag: 98ec3314-1a5a-49b1-a45e-c1c6fe068ace
+
+	measure 'D30 Oct 7-31' = CALCULATE([D30 Retention], retention_base[Analysis Period] = "Oct 7-31")
+		formatString: 0.00%
+		lineageTag: a45722af-6bbb-4bbe-a30a-284b2a13b26a
+
+	measure 'D30 Change pp' = ([D30 Oct 7-31] - [D30 Oct 1-6]) * 100
+		formatString: 0.00
+		lineageTag: fc6425b7-0d24-42f8-9522-b8532ef3fcc4
+
+	measure 'New Users Oct 7-31' = CALCULATE([New Users], retention_base[Analysis Period] = "Oct 7-31")
+		formatString: #,0
+		lineageTag: 5ec8401c-6755-425e-b215-fae683427df3
+
+	measure 'Source 4 Users Oct 7-31' = CALCULATE([New Users], retention_base[Analysis Period] = "Oct 7-31", retention_base[registered_via] = 4)
+		formatString: #,0
+		lineageTag: 5dcbb63c-4db5-45f5-9d24-a296f88f2bbc
+
+	measure 'Source 4 Share Oct 7-31' = DIVIDE([Source 4 Users Oct 7-31], [New Users Oct 7-31])
+		formatString: 0.00%
+		lineageTag: f649e345-ed08-4860-8433-df50b3b8cd1e
+
+	measure 'Source 4 D7 Oct 7-31' = CALCULATE([D7 Retention], retention_base[Analysis Period] = "Oct 7-31", retention_base[registered_via] = 4)
+		formatString: 0.00%
+		lineageTag: 09ec8610-f6a0-45b7-8a13-4ec18540f06b
+
+	measure 'Source 4 D30 Oct 7-31' = CALCULATE([D30 Retention], retention_base[Analysis Period] = "Oct 7-31", retention_base[registered_via] = 4)
+		formatString: 0.00%
+		lineageTag: 06125e21-3130-44fa-8eac-7477404f2ca3
+
+	measure 'Activated User Rate' = AVERAGEX(retention_base, IF(NOT ISBLANK(retention_base[first_active_date]), 1.0, 0.0))
+		formatString: 0.00%
+		lineageTag: 9fcde50c-b475-438e-812a-d104cc9dc2fe
+
+	measure 'Avg First 7D Total Secs' = AVERAGE(retention_base[first_7d_total_secs])
+		formatString: #,0.00
+		lineageTag: 427f7626-9468-451a-990e-fc82702b95ea
+
+	measure 'Avg First 7D Complete Plays' = AVERAGE(retention_base[first_7d_num_100])
+		formatString: 0.00
+		lineageTag: 6dd9e204-e365-4a2a-94db-0caf340ffb3f
+
+	measure 'D7 Retention Oct 7-31 Major Source' = VAR CurrentSource = SELECTEDVALUE(retention_base[Source Group]) RETURN IF(CurrentSource = "Other", BLANK(), CALCULATE([D7 Retention], retention_base[Analysis Period] = "Oct 7-31"))
+		formatString: 0.00%
+		lineageTag: 60ec496a-c3be-4641-b49c-4fdaf7e0617f
+
+	measure 'D30 Retention Oct 7-31 Major Source' = VAR CurrentSource = SELECTEDVALUE(retention_base[Source Group]) RETURN IF(CurrentSource = "Other", BLANK(), CALCULATE([D30 Retention], retention_base[Analysis Period] = "Oct 7-31"))
+		formatString: 0.00%
+		lineageTag: 20437303-aeea-426a-a02a-51ca4c06d112
+
+	measure 'Activated User Rate Oct 7-31 Major Source' = VAR CurrentSource = SELECTEDVALUE(retention_base[Source Group]) RETURN IF(CurrentSource = "Other", BLANK(), CALCULATE([Activated User Rate], retention_base[Analysis Period] = "Oct 7-31"))
+		formatString: 0.00%
+		lineageTag: 12f85be8-7265-4a72-af5b-75b9cd330faf
+
+	measure 'Avg First 7D Active Days Oct 7-31 Major Source' = VAR CurrentSource = SELECTEDVALUE(retention_base[Source Group]) RETURN IF(CurrentSource = "Other", BLANK(), CALCULATE([Avg First 7D Active Days], retention_base[Analysis Period] = "Oct 7-31"))
+		formatString: 0.00
+		lineageTag: 5364928e-a14d-4078-aeb9-37651b8b9de6
+
+	measure 'Avg First 7D Total Secs Oct 7-31 Major Source' = VAR CurrentSource = SELECTEDVALUE(retention_base[Source Group]) RETURN IF(CurrentSource = "Other", BLANK(), CALCULATE([Avg First 7D Total Secs], retention_base[Analysis Period] = "Oct 7-31"))
+		formatString: #,0.00
+		lineageTag: 83effd76-b9bb-403e-afcf-4292f2dd77e5
+
+	measure 'Avg First 7D Complete Plays Oct 7-31 Major Source' = VAR CurrentSource = SELECTEDVALUE(retention_base[Source Group]) RETURN IF(CurrentSource = "Other", BLANK(), CALCULATE([Avg First 7D Complete Plays], retention_base[Analysis Period] = "Oct 7-31"))
+		formatString: 0.00
+		lineageTag: 53794443-a776-4abc-8cb8-9c0e87733067
+
+	column msno
+		dataType: string
+		lineageTag: 1c224012-1f4e-4755-9ad2-201a1db180f5
+		summarizeBy: none
+		sourceColumn: msno
+
+		annotation SummarizationSetBy = Automatic
+
+	column registration_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: abd86429-e57a-42be-bbf4-ec4d09c86fc7
+		summarizeBy: none
+		sourceColumn: registration_date
+
+		variation Variation
+			isDefault
+			relationship: 32cb83d9-7565-4a3e-9ba4-a1a682b485e6
+			defaultHierarchy: LocalDateTable_5ca18bac-5445-4030-95b8-070d35487dbf.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column registration_month
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b00dfb8b-5641-48a2-a7f2-b6eff141b498
+		summarizeBy: none
+		sourceColumn: registration_month
+
+		variation Variation
+			isDefault
+			relationship: 49b6921e-c581-4173-b5dc-6c24263f8ace
+			defaultHierarchy: LocalDateTable_f2f61708-2336-4c14-9c92-0e051c514b4b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column registered_via
+		dataType: int64
+		formatString: 0
+		lineageTag: a5c4f239-dcb2-4dcb-96dc-542cefad35d0
+		summarizeBy: sum
+		sourceColumn: registered_via
+
+		annotation SummarizationSetBy = Automatic
+
+	column period_group
+		dataType: string
+		lineageTag: f6b3f438-40a0-4cba-b0fc-5bec67b62b60
+		summarizeBy: none
+		sourceColumn: period_group
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_active_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 66a5cf13-6fb3-4860-9c00-4220c2adcd5b
+		summarizeBy: none
+		sourceColumn: first_active_date
+
+		variation Variation
+			isDefault
+			relationship: 36f185fb-7a7c-4e65-a561-9c7db135c182
+			defaultHierarchy: LocalDateTable_e7291fed-403d-4094-9e62-75804cddafee.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column days_to_first_activity
+		dataType: int64
+		formatString: 0
+		lineageTag: b3726ca0-c85a-4923-a2a4-fbac3b772a0a
+		summarizeBy: sum
+		sourceColumn: days_to_first_activity
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_7d_active_days
+		dataType: int64
+		formatString: 0
+		lineageTag: d50a9cc1-8420-4ebe-9712-36bb9ed8a0e0
+		summarizeBy: sum
+		sourceColumn: first_7d_active_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_7d_total_secs
+		dataType: double
+		lineageTag: f4763378-ff0f-42b8-b73e-7dc01a43bb29
+		summarizeBy: sum
+		sourceColumn: first_7d_total_secs
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column first_7d_num_100
+		dataType: int64
+		formatString: 0
+		lineageTag: 377905fd-df9e-4815-9a4d-05b46546c223
+		summarizeBy: sum
+		sourceColumn: first_7d_num_100
+
+		annotation SummarizationSetBy = Automatic
+
+	column d7_retained
+		dataType: int64
+		formatString: 0
+		lineageTag: 3aea23a1-7cce-4f09-8c56-94deba279a41
+		summarizeBy: sum
+		sourceColumn: d7_retained
+
+		annotation SummarizationSetBy = Automatic
+
+	column d30_retained
+		dataType: int64
+		formatString: 0
+		lineageTag: a4cacad1-578c-4684-98a2-c27ecd643dbd
+		summarizeBy: sum
+		sourceColumn: d30_retained
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Source Group' = SWITCH(retention_base[registered_via], 3, "Source 3", 4, "Source 4", 7, "Source 7", 9, "Source 9", "Other")
+		dataType: string
+		lineageTag: 40315486-12d7-4c69-90d5-2db8aa6df05c
+		summarizeBy: none
+		sortByColumn: 'Source Group Sort'
+
+	column 'Source Group Sort' = SWITCH(retention_base[registered_via], 3, 1, 4, 2, 7, 3, 9, 4, 5)
+		dataType: int64
+		formatString: 0
+		lineageTag: 0e4784d6-ae76-436d-8549-d9a51071ca4b
+		summarizeBy: none
+
+	column 'Analysis Period' = SWITCH(TRUE(), retention_base[registration_date] >= DATE(2015, 7, 1) && retention_base[registration_date] <= DATE(2015, 9, 30), "Baseline", retention_base[registration_date] >= DATE(2015, 10, 1) && retention_base[registration_date] <= DATE(2015, 10, 6), "Oct 1-6", retention_base[registration_date] >= DATE(2015, 10, 7) && retention_base[registration_date] <= DATE(2015, 10, 31), "Oct 7-31", BLANK())
+		dataType: string
+		lineageTag: e233bd29-2254-4fdc-8a53-9ce4b2c715f8
+		summarizeBy: none
+		sortByColumn: 'Analysis Period Sort'
+
+	column 'Analysis Period Sort' = SWITCH(TRUE(), retention_base[registration_date] >= DATE(2015, 7, 1) && retention_base[registration_date] <= DATE(2015, 9, 30), 1, retention_base[registration_date] >= DATE(2015, 10, 1) && retention_base[registration_date] <= DATE(2015, 10, 6), 2, retention_base[registration_date] >= DATE(2015, 10, 7) && retention_base[registration_date] <= DATE(2015, 10, 31), 3, 99)
+		dataType: int64
+		formatString: 0
+		lineageTag: 0e7fc164-1445-402e-b35a-c85b61a82afb
+		summarizeBy: none
+
+	column 'Analysis Period CN' = SWITCH(TRUE(), retention_base[registration_date] >= DATE(2015, 7, 1) && retention_base[registration_date] <= DATE(2015, 9, 30), "7月至9月基准期", retention_base[registration_date] >= DATE(2015, 10, 1) && retention_base[registration_date] <= DATE(2015, 10, 6), "10月1日至6日", retention_base[registration_date] >= DATE(2015, 10, 7) && retention_base[registration_date] <= DATE(2015, 10, 31), "10月7日至31日", BLANK())
+		dataType: string
+		lineageTag: a13bbf85-7766-4cb8-a1a8-e585cf33a4af
+		summarizeBy: none
+		sortByColumn: 'Analysis Period Sort'
+
+	column 'Source Group CN' = SWITCH(retention_base[registered_via], 3, "来源3", 4, "来源4", 7, "来源7", 9, "来源9", "其他")
+		dataType: string
+		lineageTag: 5a95fdbd-c53b-48a8-b772-1f87e934771e
+		summarizeBy: none
+		sortByColumn: 'Source Group Sort'
+
+	partition retention_base = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Administrator\Desktop\kkbox_growth_analysis\data\processed\new_user_anomaly_base.csv"),[Delimiter=",", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"msno", type text}, {"registration_date", type date}, {"registration_month", type date}, {"registered_via", Int64.Type}, {"period_group", type text}, {"first_active_date", type date}, {"days_to_first_activity", Int64.Type}, {"first_7d_active_days", Int64.Type}, {"first_7d_total_secs", type number}, {"first_7d_num_100", Int64.Type}, {"d7_retained", Int64.Type}, {"d30_retained", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

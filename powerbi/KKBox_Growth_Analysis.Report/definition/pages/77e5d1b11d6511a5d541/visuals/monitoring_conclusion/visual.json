@@ -1,0 +1,84 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "monitoring_conclusion",
+  "position": {
+    "x": 49.6048632218845,
+    "y": 666.26139817629178,
+    "z": 9000,
+    "height": 53.495440729483285,
+    "width": 1180.7902735562311,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "监控发现：10月7日后新用户规模明显增加，同时D7留存率从22.83%降至9.71%，D30留存率从11.44%降至6.69%，因此进一步进入来源维度诊断。",
+                    "textStyle": {
+                      "fontFamily": "Microsoft YaHei UI",
+                      "fontSize": "13pt",
+                      "color": "#17324d"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "annotations": [
+    {
+      "value": "monitoring_conclusion",
+      "name": "codexVisualId"
+    }
+  ]
+}

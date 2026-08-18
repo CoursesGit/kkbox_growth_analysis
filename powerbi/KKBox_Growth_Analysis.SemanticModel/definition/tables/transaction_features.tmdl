@@ -1,0 +1,196 @@
+table transaction_features
+	lineageTag: 46e03e0f-bd69-4660-bcc9-9f96c33e1e2f
+
+	measure '30D Transaction Rate' = AVERAGE(transaction_features[has_transaction_30d])
+		formatString: 0.00%
+		lineageTag: 4495357b-2850-4681-af1f-b6aa128a7fb5
+
+	measure 'Paying User Rate' = AVERAGEX(transaction_features, IF(transaction_features[paid_transaction_count_30d] > 0, 1.0, 0.0))
+		formatString: 0.00%
+		lineageTag: a7703fc5-342f-4a91-bae9-fcc60b89c832
+
+	measure 'Avg 30D Revenue' = AVERAGE(transaction_features[revenue_30d])
+		formatString: #,0.00
+		lineageTag: 874ec19f-9a13-4cb3-ab76-99449a65ade2
+
+	measure 'Any Auto Renew Rate 30D' = AVERAGE(transaction_features[any_auto_renew_30d])
+		formatString: 0.00%
+		lineageTag: 099610c8-a72e-41d3-8812-9417dcdd2d31
+
+	measure '30D Transaction Rate Major Source' = VAR CurrentSource = SELECTEDVALUE(transaction_features[Transaction Source Group]) RETURN IF(CurrentSource = "Other", BLANK(), [30D Transaction Rate])
+		formatString: 0.00%
+		lineageTag: 65ee92e0-e74b-49b8-b64c-b357299ba331
+
+	measure 'Paying User Rate Major Source' = VAR CurrentSource = SELECTEDVALUE(transaction_features[Transaction Source Group]) RETURN IF(CurrentSource = "Other", BLANK(), [Paying User Rate])
+		formatString: 0.00%
+		lineageTag: f22eb721-c40c-473e-b0e0-b0fce253bb7e
+
+	measure 'Avg 30D Revenue Major Source' = VAR CurrentSource = SELECTEDVALUE(transaction_features[Transaction Source Group]) RETURN IF(CurrentSource = "Other", BLANK(), [Avg 30D Revenue])
+		formatString: #,0.00
+		lineageTag: 0392584f-f540-4cc5-a730-5a63abe8a998
+
+	measure 'Any Auto Renew Rate 30D Major Source' = VAR CurrentSource = SELECTEDVALUE(transaction_features[Transaction Source Group]) RETURN IF(CurrentSource = "Other", BLANK(), [Any Auto Renew Rate 30D])
+		formatString: 0.00%
+		lineageTag: 272ff86f-79c6-43cb-b846-9341eb2a94d6
+
+	column msno
+		dataType: string
+		lineageTag: 543ab33f-2d5c-4ff8-a184-a70d7a73e3d6
+		summarizeBy: none
+		sourceColumn: msno
+
+		annotation SummarizationSetBy = Automatic
+
+	column registration_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0c7d82fa-2d16-48cd-b44c-77b1b46fede0
+		summarizeBy: none
+		sourceColumn: registration_date
+
+		variation Variation
+			isDefault
+			relationship: 9b374c64-db39-4456-b85c-2a6eefab0e4a
+			defaultHierarchy: LocalDateTable_e554a39c-0624-479c-8bfc-603cf835c089.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column registered_via
+		dataType: int64
+		formatString: 0
+		lineageTag: 16c17c9f-1bd5-4de2-9812-b77640837558
+		summarizeBy: sum
+		sourceColumn: registered_via
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_transaction_30d
+		dataType: int64
+		formatString: 0
+		lineageTag: e64a6053-ff24-4ef6-95f8-34034a7ff352
+		summarizeBy: sum
+		sourceColumn: has_transaction_30d
+
+		annotation SummarizationSetBy = Automatic
+
+	column transaction_count_30d
+		dataType: int64
+		formatString: 0
+		lineageTag: a6f960de-3e40-4964-b62c-2db52350f027
+		summarizeBy: sum
+		sourceColumn: transaction_count_30d
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_transaction_count_30d
+		dataType: int64
+		formatString: 0
+		lineageTag: 8763240e-cfd4-49fb-8506-7a2776ac0c9b
+		summarizeBy: sum
+		sourceColumn: paid_transaction_count_30d
+
+		annotation SummarizationSetBy = Automatic
+
+	column revenue_30d
+		dataType: int64
+		formatString: 0
+		lineageTag: 4544539d-15f7-45fe-b624-e26b2e32b8fc
+		summarizeBy: sum
+		sourceColumn: revenue_30d
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_transaction_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 278ef8c1-cbe8-4910-9c2a-9785a9a05459
+		summarizeBy: none
+		sourceColumn: first_transaction_date
+
+		variation Variation
+			isDefault
+			relationship: d53365c6-1d5a-4ac4-87b4-8fde6b1525f1
+			defaultHierarchy: LocalDateTable_706f0320-f469-4979-8962-79b124b6352e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column days_to_first_transaction
+		dataType: int64
+		formatString: 0
+		lineageTag: 83e7f6a2-3f74-4214-809e-4a60b4375d9f
+		summarizeBy: sum
+		sourceColumn: days_to_first_transaction
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_payment_plan_days
+		dataType: int64
+		formatString: 0
+		lineageTag: aa2b77c3-4067-48c7-9057-c9cc8c6f1072
+		summarizeBy: sum
+		sourceColumn: first_payment_plan_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_actual_amount_paid
+		dataType: int64
+		formatString: 0
+		lineageTag: 97274d07-fdb4-440f-b666-98f4c92f549b
+		summarizeBy: sum
+		sourceColumn: first_actual_amount_paid
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_is_auto_renew
+		dataType: int64
+		formatString: 0
+		lineageTag: 18a8ac2b-d5c5-421c-a130-527c3c60d3d0
+		summarizeBy: sum
+		sourceColumn: first_is_auto_renew
+
+		annotation SummarizationSetBy = Automatic
+
+	column any_auto_renew_30d
+		dataType: int64
+		formatString: 0
+		lineageTag: 2135e8cb-044b-4bc4-a731-48c95eec6e2a
+		summarizeBy: sum
+		sourceColumn: any_auto_renew_30d
+
+		annotation SummarizationSetBy = Automatic
+
+	column any_cancel_30d
+		dataType: int64
+		formatString: 0
+		lineageTag: 1d0de188-8007-4a94-8e23-b81a3a23d9c6
+		summarizeBy: sum
+		sourceColumn: any_cancel_30d
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction Source Group' = SWITCH(transaction_features[registered_via], 3, "Source 3", 4, "Source 4", 7, "Source 7", 9, "Source 9", "Other")
+		dataType: string
+		lineageTag: e40348e7-55ae-4dab-a931-9d0b64cb9487
+		summarizeBy: none
+
+	column 'Transaction Source Group CN' = SWITCH(transaction_features[registered_via], 3, "来源3", 4, "来源4", 7, "来源7", 9, "来源9", "其他")
+		dataType: string
+		lineageTag: d739c1a4-661b-4814-ab19-bda952aa52e3
+		summarizeBy: none
+
+	partition transaction_features = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Administrator\Desktop\kkbox_growth_analysis\data\processed\new_user_transaction_features.csv"),[Delimiter=",", Columns=14, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"msno", type text}, {"registration_date", type date}, {"registered_via", Int64.Type}, {"has_transaction_30d", Int64.Type}, {"transaction_count_30d", Int64.Type}, {"paid_transaction_count_30d", Int64.Type}, {"revenue_30d", Int64.Type}, {"first_transaction_date", type date}, {"days_to_first_transaction", Int64.Type}, {"first_payment_plan_days", Int64.Type}, {"first_actual_amount_paid", Int64.Type}, {"first_is_auto_renew", Int64.Type}, {"any_auto_renew_30d", Int64.Type}, {"any_cancel_30d", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

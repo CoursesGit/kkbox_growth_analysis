@@ -1,0 +1,315 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "early_usage_matrix",
+  "position": {
+    "x": 39.878419452887542,
+    "y": 445.47112462006083,
+    "z": 8000,
+    "height": 180.91185410334347,
+    "width": 585.531914893617,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "matrix",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "retention_base"
+                    }
+                  },
+                  "Property": "Source Group CN"
+                }
+              },
+              "queryRef": "retention_base.Source Group CN",
+              "nativeQueryRef": "Source Group CN",
+              "active": true,
+              "displayName": "来源"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "retention_base"
+                    }
+                  },
+                  "Property": "Avg First 7D Active Days Oct 7-31 Major Source"
+                }
+              },
+              "queryRef": "retention_base.Avg First 7D Active Days Oct 7-31 Major Source",
+              "nativeQueryRef": "Avg First 7D Active Days Oct 7-31 Major Source",
+              "active": true,
+              "displayName": "首7天活跃天数",
+              "format": "0.00"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "retention_base"
+                    }
+                  },
+                  "Property": "Avg First 7D Total Secs Oct 7-31 Major Source"
+                }
+              },
+              "queryRef": "retention_base.Avg First 7D Total Secs Oct 7-31 Major Source",
+              "nativeQueryRef": "Avg First 7D Total Secs Oct 7-31 Major Source",
+              "active": true,
+              "displayName": "首7天听歌秒数",
+              "format": "#,0.00"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "retention_base"
+                    }
+                  },
+                  "Property": "Avg First 7D Complete Plays Oct 7-31 Major Source"
+                }
+              },
+              "queryRef": "retention_base.Avg First 7D Complete Plays Oct 7-31 Major Source",
+              "nativeQueryRef": "Avg First 7D Complete Plays Oct 7-31 Major Source",
+              "active": true,
+              "displayName": "首7天完整播放数",
+              "format": "0.00"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "rowHeaders": [
+        {
+          "properties": {}
+        }
+      ],
+      "values": [
+        {
+          "properties": {}
+        }
+      ],
+    "columnHeaders": [
+      {
+        "properties": {}
+      }
+    ],
+    "subTotals": [
+      {
+        "properties": {
+          "rowSubtotals": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'主要来源首周使用深度｜10月7日至31日'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12L"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#D7E2EC'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "8L"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9cd90d1574a317abae12",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "retention_base"
+              }
+            },
+            "Property": "Source Group CN"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f27a1ea119a1c6c8495d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "retention_base"
+              }
+            },
+            "Property": "Avg First 7D Active Days Oct 7-31 Major Source"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "64e91358d3d78d19b056",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "retention_base"
+              }
+            },
+            "Property": "Avg First 7D Total Secs Oct 7-31 Major Source"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "294839959c159806d7db",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "retention_base"
+              }
+            },
+            "Property": "Avg First 7D Complete Plays Oct 7-31 Major Source"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  },
+  "annotations": [
+    {
+      "value": "early_usage_matrix",
+      "name": "codexVisualId"
+    }
+  ]
+}

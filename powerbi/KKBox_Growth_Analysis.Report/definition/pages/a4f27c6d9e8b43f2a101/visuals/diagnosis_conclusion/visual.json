@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "diagnosis_conclusion",
+  "position": {
+    "x": 39.878419452887542,
+    "y": 626.38297872340434,
+    "z": 10000,
+    "height": 85.59270516717325,
+    "width": 1200.2431610942249,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "诊断结论：10月7日后，来源4占新增注册用户的80.83%，且其首周使用深度和D7/D30留存均明显低于同期其他主要来源。",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Microsoft YaHei UI",
+                      "fontSize": "10pt",
+                      "color": "#17324d"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "结构分解：7月至9月基准期D30为10.02%，10月全月D30为7.15%；来源结构变化贡献-5.13个百分点，来源内部表现改善+2.26个百分点，最终净变化为-2.87个百分点。",
+                    "textStyle": {
+                      "fontFamily": "Microsoft YaHei UI",
+                      "fontSize": "10pt",
+                      "color": "#4b6478"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "核心解读：整体留存下降主要来自新用户来源结构变化，而不是原有主要来源的留存普遍恶化。",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Microsoft YaHei UI",
+                      "fontSize": "10pt",
+                      "color": "#17324d"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "数据限制：公开数据无法确认来源4在10月7日后激增究竟来自渠道投放、产品入口调整，还是registered_via埋点/编码规则变化。",
+                    "textStyle": {
+                      "fontFamily": "Microsoft YaHei UI",
+                      "fontSize": "10pt",
+                      "color": "#6b7280"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "annotations": [
+    {
+      "value": "diagnosis_conclusion",
+      "name": "codexVisualId"
+    }
+  ]
+}

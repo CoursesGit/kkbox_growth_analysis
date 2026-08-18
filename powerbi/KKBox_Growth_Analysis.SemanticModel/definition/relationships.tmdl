@@ -1,0 +1,31 @@
+relationship 32cb83d9-7565-4a3e-9ba4-a1a682b485e6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: retention_base.registration_date
+	toColumn: LocalDateTable_5ca18bac-5445-4030-95b8-070d35487dbf.Date
+
+relationship 49b6921e-c581-4173-b5dc-6c24263f8ace
+	joinOnDateBehavior: datePartOnly
+	fromColumn: retention_base.registration_month
+	toColumn: LocalDateTable_f2f61708-2336-4c14-9c92-0e051c514b4b.Date
+
+relationship 36f185fb-7a7c-4e65-a561-9c7db135c182
+	joinOnDateBehavior: datePartOnly
+	fromColumn: retention_base.first_active_date
+	toColumn: LocalDateTable_e7291fed-403d-4094-9e62-75804cddafee.Date
+
+relationship 9b374c64-db39-4456-b85c-2a6eefab0e4a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: transaction_features.registration_date
+	toColumn: LocalDateTable_e554a39c-0624-479c-8bfc-603cf835c089.Date
+
+relationship d53365c6-1d5a-4ac4-87b4-8fde6b1525f1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: transaction_features.first_transaction_date
+	toColumn: LocalDateTable_706f0320-f469-4979-8962-79b124b6352e.Date
+
+relationship AutoDetected_3321e45a-519b-4ce7-bfeb-0380936bed73
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: transaction_features.msno
+	toColumn: retention_base.msno
+

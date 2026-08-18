@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "77e5d1b11d6511a5d541",
+  "displayName": "留存监控",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280
+}

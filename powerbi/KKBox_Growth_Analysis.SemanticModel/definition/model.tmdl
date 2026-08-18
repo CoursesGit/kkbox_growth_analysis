@@ -1,0 +1,25 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["retention_base","transaction_features"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table retention_base
+ref table DateTableTemplate_cd79be66-8d30-4ae2-9eec-e7f7de27558f
+ref table LocalDateTable_5ca18bac-5445-4030-95b8-070d35487dbf
+ref table LocalDateTable_f2f61708-2336-4c14-9c92-0e051c514b4b
+ref table LocalDateTable_e7291fed-403d-4094-9e62-75804cddafee
+ref table transaction_features
+ref table LocalDateTable_e554a39c-0624-479c-8bfc-603cf835c089
+ref table LocalDateTable_706f0320-f469-4979-8962-79b124b6352e
+
+ref cultureInfo en-US
+
