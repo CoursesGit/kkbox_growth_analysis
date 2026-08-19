@@ -19,12 +19,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "诊断结论：10月7日后，来源4占新增注册用户的80.83%，且其首周使用深度和D7/D30留存均明显低于同期其他主要来源。",
+                    "value": "辛普森悖论 / Source Mix Effect：整体 D30 从 10.02% 降至 7.15%，但 Source 3 / 4 / 7 / 9 的 D30 均提升。",
                     "textStyle": {
-                      "fontWeight": "bold",
                       "fontFamily": "Microsoft YaHei UI",
-                      "fontSize": "10pt",
-                      "color": "#17324d"
+                      "fontSize": "11pt",
+                      "color": "#17324D"
                     }
                   }
                 ]
@@ -32,11 +31,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "结构分解：7月至9月基准期D30为10.02%，10月全月D30为7.15%；来源结构变化贡献-5.13个百分点，来源内部表现改善+2.26个百分点，最终净变化为-2.87个百分点。",
+                    "value": "Source 4 自身 D30 从 0.63% 升至 2.37%，其用户占比却从 0.12% 剧增至 73.08%，成为聚合反转的核心结构因素。",
                     "textStyle": {
                       "fontFamily": "Microsoft YaHei UI",
-                      "fontSize": "10pt",
-                      "color": "#4b6478"
+                      "fontSize": "11pt",
+                      "color": "#17324D"
                     }
                   }
                 ]
@@ -44,12 +43,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "核心解读：整体留存下降主要来自新用户来源结构变化，而不是原有主要来源的留存普遍恶化。",
+                    "value": "来源结构效应 -5.13pp + 来源内部改善 +2.26pp = 整体净变化 -2.87pp。",
                     "textStyle": {
-                      "fontWeight": "bold",
                       "fontFamily": "Microsoft YaHei UI",
-                      "fontSize": "10pt",
-                      "color": "#17324d"
+                      "fontSize": "11pt",
+                      "color": "#17324D"
                     }
                   }
                 ]
@@ -57,11 +55,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "数据限制：公开数据无法确认来源4在10月7日后激增究竟来自渠道投放、产品入口调整，还是registered_via埋点/编码规则变化。",
+                    "value": "业务衔接：后续优先围绕 Source 4 用户设计留存优化实验；以上为描述性结构分解，不代表具体动作的因果效果。",
                     "textStyle": {
                       "fontFamily": "Microsoft YaHei UI",
-                      "fontSize": "10pt",
-                      "color": "#6b7280"
+                      "fontSize": "11pt",
+                      "color": "#17324D"
                     }
                   }
                 ]

@@ -10,30 +10,10 @@
     "tabOrder": 6000
   },
   "visual": {
-    "visualType": "hundredPercentStackedColumnChart",
+    "visualType": "clusteredColumnChart",
     "query": {
       "queryState": {
         "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "retention_base"
-                    }
-                  },
-                  "Property": "Analysis Period CN"
-                }
-              },
-              "queryRef": "retention_base.Analysis Period CN",
-              "nativeQueryRef": "Analysis Period CN",
-              "active": true,
-              "displayName": "分析阶段"
-            }
-          ]
-        },
-        "Series": {
           "projections": [
             {
               "field": {
@@ -63,14 +43,31 @@
                       "Entity": "retention_base"
                     }
                   },
-                  "Property": "New Users"
+                  "Property": "Major Source Baseline Share"
                 }
               },
-              "queryRef": "retention_base.New Users",
-              "nativeQueryRef": "New Users",
+              "queryRef": "retention_base.Major Source Baseline Share",
+              "nativeQueryRef": "Major Source Baseline Share",
               "active": true,
-              "displayName": "新增用户",
-              "format": "#,0"
+              "displayName": "基准期",
+              "format": "0.00%"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "retention_base"
+                    }
+                  },
+                  "Property": "Major Source October Share"
+                }
+              },
+              "queryRef": "retention_base.Major Source October Share",
+              "nativeQueryRef": "Major Source October Share",
+              "active": true,
+              "displayName": "10月",
+              "format": "0.00%"
             }
           ]
         }
@@ -103,14 +100,7 @@
             "showAxisTitle": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "titleText": {
-              "expr": {
-                "Literal": {
-                  "Value": "'分析阶段'"
+                  "Value": "false"
                 }
               }
             }
@@ -130,7 +120,58 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'新增用户占比'"
+                  "Value": "'用户占比'"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "2L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#2F75B5'"
+                    }
+                  }
                 }
               }
             }
@@ -152,14 +193,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'新用户来源结构变化'"
+                  "Value": "'主要来源用户占比：基准期 vs 10月'"
                 }
               }
             },
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'Segoe UI'"
+                  "Value": "'Microsoft YaHei UI'"
                 }
               }
             },
@@ -267,21 +308,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "9430e5c48b1b4b590ca7",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "retention_base"
-              }
-            },
-            "Property": "Analysis Period CN"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "20a2658da96ef24d50ac",
+        "name": "codex_column_source_group_cn",
         "field": {
           "Column": {
             "Expression": {
@@ -295,7 +322,7 @@
         "type": "Categorical"
       },
       {
-        "name": "88d63b49af04b38f9310",
+        "name": "codex_measure_major_source_baseline_share",
         "field": {
           "Measure": {
             "Expression": {
@@ -303,7 +330,21 @@
                 "Entity": "retention_base"
               }
             },
-            "Property": "New Users"
+            "Property": "Major Source Baseline Share"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "codex_measure_major_source_october_share",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "retention_base"
+              }
+            },
+            "Property": "Major Source October Share"
           }
         },
         "type": "Advanced"

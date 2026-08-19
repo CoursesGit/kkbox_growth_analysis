@@ -85,6 +85,57 @@ table retention_base
 		formatString: 0.00
 		lineageTag: 53794443-a776-4abc-8cb8-9c0e87733067
 
+	measure 'Baseline Overall D30' = CALCULATE([D30 Retention], FILTER(ALL(retention_base[registration_date]), retention_base[registration_date] >= DATE(2015, 7, 1) && retention_base[registration_date] <= DATE(2015, 9, 30)))
+		formatString: 0.00%
+		lineageTag: 65654916-e239-45ec-bd02-055f1242eb87
+
+	measure 'October Overall D30' = CALCULATE([D30 Retention], FILTER(ALL(retention_base[registration_date]), retention_base[registration_date] >= DATE(2015, 10, 1) && retention_base[registration_date] <= DATE(2015, 10, 31)))
+		formatString: 0.00%
+		lineageTag: c9cd5af1-d2dc-4987-a6d4-88e7710fd711
+
+	measure 'Total Change pp' = ([October Overall D30] - [Baseline Overall D30]) * 100
+		formatString: +0.00;-0.00;0.00
+		lineageTag: 28f2f143-af16-400c-8719-0eae8dc99528
+
+	measure 'Counterfactual D30' = VAR OctoberTotal = CALCULATE([New Users], FILTER(ALL(retention_base), retention_base[registration_date] >= DATE(2015, 10, 1) && retention_base[registration_date] <= DATE(2015, 10, 31))) RETURN SUMX(ALL(retention_base[registered_via]), VAR CurrentSource = retention_base[registered_via] VAR OctoberSourceUsers = CALCULATE([New Users], FILTER(ALL(retention_base), retention_base[registration_date] >= DATE(2015, 10, 1) && retention_base[registration_date] <= DATE(2015, 10, 31) && retention_base[registered_via] = CurrentSource)) VAR BaselineRate = CALCULATE([D30 Retention], FILTER(ALL(retention_base), retention_base[registration_date] >= DATE(2015, 7, 1) && retention_base[registration_date] <= DATE(2015, 9, 30) && retention_base[registered_via] = CurrentSource)) RETURN DIVIDE(OctoberSourceUsers, OctoberTotal) * BaselineRate)
+		formatString: 0.00%
+		lineageTag: 39a31a9a-ae46-4c41-925b-875bf80909bb
+
+	measure 'Source Mix Effect pp' = ([Counterfactual D30] - [Baseline Overall D30]) * 100
+		formatString: +0.00;-0.00;0.00
+		lineageTag: 948d0a4b-86bb-4c8a-ad04-c3a3a4d62f90
+
+	measure 'Within-Source Effect pp' = ([October Overall D30] - [Counterfactual D30]) * 100
+		formatString: +0.00;-0.00;0.00
+		lineageTag: a54bf5f4-cc06-497f-a9c0-6eb6263668ab
+
+	measure 'Source 4 Baseline Share' = DIVIDE(CALCULATE([New Users], FILTER(ALL(retention_base), retention_base[registration_date] >= DATE(2015, 7, 1) && retention_base[registration_date] <= DATE(2015, 9, 30) && retention_base[registered_via] = 4)), CALCULATE([New Users], FILTER(ALL(retention_base), retention_base[registration_date] >= DATE(2015, 7, 1) && retention_base[registration_date] <= DATE(2015, 9, 30))))
+		formatString: 0.00%
+		lineageTag: 707c20e7-6763-4577-8b2e-b657b878dc4a
+
+	measure 'Source 4 October Share' = DIVIDE(CALCULATE([New Users], FILTER(ALL(retention_base), retention_base[registration_date] >= DATE(2015, 10, 1) && retention_base[registration_date] <= DATE(2015, 10, 31) && retention_base[registered_via] = 4)), CALCULATE([New Users], FILTER(ALL(retention_base), retention_base[registration_date] >= DATE(2015, 10, 1) && retention_base[registration_date] <= DATE(2015, 10, 31))))
+		formatString: 0.00%
+		lineageTag: a3f459de-fe2d-434f-9ce1-8269d186d723
+
+	measure 'Source 4 Share Shift' = FORMAT([Source 4 Baseline Share], "0.00%") & " -> " & FORMAT([Source 4 October Share], "0.00%")
+		lineageTag: a77186aa-f0eb-40e6-a956-a2cc62a03759
+
+	measure 'Major Source Baseline D30' = VAR CurrentSource = SELECTEDVALUE(retention_base[Source Group]) RETURN IF(CurrentSource = "Other", BLANK(), CALCULATE([D30 Retention], FILTER(ALL(retention_base[registration_date]), retention_base[registration_date] >= DATE(2015, 7, 1) && retention_base[registration_date] <= DATE(2015, 9, 30))))
+		formatString: 0.00%
+		lineageTag: d3e7a046-ed26-48f0-b038-c8a87041b878
+
+	measure 'Major Source October D30' = VAR CurrentSource = SELECTEDVALUE(retention_base[Source Group]) RETURN IF(CurrentSource = "Other", BLANK(), CALCULATE([D30 Retention], FILTER(ALL(retention_base[registration_date]), retention_base[registration_date] >= DATE(2015, 10, 1) && retention_base[registration_date] <= DATE(2015, 10, 31))))
+		formatString: 0.00%
+		lineageTag: e98707ab-7625-421f-9817-56e4cc62e167
+
+	measure 'Major Source Baseline Share' = VAR CurrentSource = SELECTEDVALUE(retention_base[Source Group]) VAR PeriodUsers = CALCULATE([New Users], FILTER(ALL(retention_base[registration_date]), retention_base[registration_date] >= DATE(2015, 7, 1) && retention_base[registration_date] <= DATE(2015, 9, 30))) VAR PeriodTotal = CALCULATE([New Users], FILTER(ALL(retention_base), retention_base[registration_date] >= DATE(2015, 7, 1) && retention_base[registration_date] <= DATE(2015, 9, 30))) RETURN IF(CurrentSource = "Other", BLANK(), DIVIDE(PeriodUsers, PeriodTotal))
+		formatString: 0.00%
+		lineageTag: e2bcda49-f455-4382-b39f-3566cd9aa5d4
+
+	measure 'Major Source October Share' = VAR CurrentSource = SELECTEDVALUE(retention_base[Source Group]) VAR PeriodUsers = CALCULATE([New Users], FILTER(ALL(retention_base[registration_date]), retention_base[registration_date] >= DATE(2015, 10, 1) && retention_base[registration_date] <= DATE(2015, 10, 31))) VAR PeriodTotal = CALCULATE([New Users], FILTER(ALL(retention_base), retention_base[registration_date] >= DATE(2015, 10, 1) && retention_base[registration_date] <= DATE(2015, 10, 31))) RETURN IF(CurrentSource = "Other", BLANK(), DIVIDE(PeriodUsers, PeriodTotal))
+		formatString: 0.00%
+		lineageTag: b373c36d-a0eb-438a-87cf-7b250da9b138
+
 	column msno
 		dataType: string
 		lineageTag: 1c224012-1f4e-4755-9ad2-201a1db180f5
@@ -253,7 +304,7 @@ table retention_base
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\Users\Administrator\Desktop\kkbox_growth_analysis\data\processed\new_user_anomaly_base.csv"),[Delimiter=",", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(File.Contents("C:\path\to\kkbox_growth_analysis\data\processed\new_user_anomaly_base.csv"),[Delimiter=",", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"msno", type text}, {"registration_date", type date}, {"registration_month", type date}, {"registered_via", Int64.Type}, {"period_group", type text}, {"first_active_date", type date}, {"days_to_first_activity", Int64.Type}, {"first_7d_active_days", Int64.Type}, {"first_7d_total_secs", type number}, {"first_7d_num_100", Int64.Type}, {"d7_retained", Int64.Type}, {"d30_retained", Int64.Type}})
 				in

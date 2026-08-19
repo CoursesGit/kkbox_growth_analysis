@@ -43,13 +43,13 @@
                       "Entity": "retention_base"
                     }
                   },
-                  "Property": "D7 Retention Oct 7-31 Major Source"
+                  "Property": "Major Source Baseline D30"
                 }
               },
-              "queryRef": "retention_base.D7 Retention Oct 7-31 Major Source",
-              "nativeQueryRef": "D7 Retention Oct 7-31 Major Source",
+              "queryRef": "retention_base.Major Source Baseline D30",
+              "nativeQueryRef": "Major Source Baseline D30",
               "active": true,
-              "displayName": "D7留存率",
+              "displayName": "基准期",
               "format": "0.00%"
             },
             {
@@ -60,13 +60,13 @@
                       "Entity": "retention_base"
                     }
                   },
-                  "Property": "D30 Retention Oct 7-31 Major Source"
+                  "Property": "Major Source October D30"
                 }
               },
-              "queryRef": "retention_base.D30 Retention Oct 7-31 Major Source",
-              "nativeQueryRef": "D30 Retention Oct 7-31 Major Source",
+              "queryRef": "retention_base.Major Source October D30",
+              "nativeQueryRef": "Major Source October D30",
               "active": true,
-              "displayName": "D30留存率",
+              "displayName": "10月",
               "format": "0.00%"
             }
           ]
@@ -94,40 +94,13 @@
           }
         }
       ],
-      "labels": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "2L"
-                }
-              }
-            }
-          }
-        }
-      ],
       "categoryAxis": [
         {
           "properties": {
             "showAxisTitle": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "titleText": {
-              "expr": {
-                "Literal": {
-                  "Value": "'来源'"
+                  "Value": "false"
                 }
               }
             }
@@ -147,7 +120,58 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'留存率'"
+                  "Value": "'D30 留存'"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "2L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#2F75B5'"
+                    }
+                  }
                 }
               }
             }
@@ -169,14 +193,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'主要来源留存对比｜10月7日至31日'"
+                  "Value": "'总体下降，但主要来源 D30 均改善'"
                 }
               }
             },
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'Segoe UI'"
+                  "Value": "'Microsoft YaHei UI'"
                 }
               }
             },
@@ -284,7 +308,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "c5e67f46d4c3b42b07f9",
+        "name": "codex_column_source_group_cn",
         "field": {
           "Column": {
             "Expression": {
@@ -298,7 +322,7 @@
         "type": "Categorical"
       },
       {
-        "name": "65f6b585ba8944e19e2d",
+        "name": "codex_measure_major_source_baseline_d30",
         "field": {
           "Measure": {
             "Expression": {
@@ -306,13 +330,13 @@
                 "Entity": "retention_base"
               }
             },
-            "Property": "D7 Retention Oct 7-31 Major Source"
+            "Property": "Major Source Baseline D30"
           }
         },
         "type": "Advanced"
       },
       {
-        "name": "95a4492ed7baa5eca75e",
+        "name": "codex_measure_major_source_october_d30",
         "field": {
           "Measure": {
             "Expression": {
@@ -320,7 +344,7 @@
                 "Entity": "retention_base"
               }
             },
-            "Property": "D30 Retention Oct 7-31 Major Source"
+            "Property": "Major Source October D30"
           }
         },
         "type": "Advanced"

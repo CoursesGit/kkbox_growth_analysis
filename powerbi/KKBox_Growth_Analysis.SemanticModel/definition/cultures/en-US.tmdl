@@ -222,19 +222,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Avg First 7D Active Days Oct 7-31 Major Source"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "首7天活跃天数": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "retention_base.avg_first_7d_total_secs_oct_731_major_source": {
 			      "Definition": {
@@ -243,19 +231,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Avg First 7D Total Secs Oct 7-31 Major Source"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "首7天听歌秒数": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "retention_base.avg_first_7d_complete_plays_oct_731_major_source": {
 			      "Definition": {
@@ -264,19 +240,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Avg First 7D Complete Plays Oct 7-31 Major Source"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "首7天完整播放数": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "retention_base.source_4_d30_oct_731": {
 			      "Definition": {
@@ -285,19 +249,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Source 4 D30 Oct 7-31"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Source 4 D30 Oct 7-31": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "retention_base.source_4_d7_oct_731": {
 			      "Definition": {
@@ -306,19 +258,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Source 4 D7 Oct 7-31"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Source 4 D7 Oct 7-31": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "retention_base.source_4_share_oct_731": {
 			      "Definition": {
@@ -327,19 +267,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Source 4 Share Oct 7-31"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Source 4 Share Oct 7-31": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "retention_base.source_4_users_oct_731": {
 			      "Definition": {
@@ -348,19 +276,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Source 4 Users Oct 7-31"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Source 4 Users Oct 7-31": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "retention_base.d7_retention_oct_731_major_source": {
 			      "Definition": {
@@ -369,19 +285,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "D7 Retention Oct 7-31 Major Source"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "D7留存率": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "retention_base.d30_retention_oct_731_major_source": {
 			      "Definition": {
@@ -390,19 +294,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "D30 Retention Oct 7-31 Major Source"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "D30留存率": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "transaction_features.transaction_source_group_cn": {
 			      "Definition": {
@@ -411,19 +303,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Transaction Source Group CN"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "来源": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "transaction_features.column30d_transaction_rate_major_source": {
 			      "Definition": {
@@ -432,19 +312,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "30D Transaction Rate Major Source"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "30天交易率": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "transaction_features.paying_user_rate_major_source": {
 			      "Definition": {
@@ -453,19 +321,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Paying User Rate Major Source"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "付费率": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "transaction_features.avg_30d_revenue_major_source": {
 			      "Definition": {
@@ -474,10 +330,28 @@ cultureInfo en-US
 			          "ConceptualProperty": "Avg 30D Revenue Major Source"
 			        }
 			      },
+			      "State": "Generated"
+			    },
+			    "transaction_features.any_auto_renew_rate_30d_major_source": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "transaction_features",
+			          "ConceptualProperty": "Any Auto Renew Rate 30D Major Source"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "retention_base.source_mix_effect_pp": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "retention_base",
+			          "ConceptualProperty": "Source Mix Effect pp"
+			        }
+			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "30天平均收入": {
+			          "来源结构效应（Source Mix）": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -488,17 +362,195 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "transaction_features.any_auto_renew_rate_30d_major_source": {
+			    "retention_base.source_4_share_shift": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "transaction_features",
-			          "ConceptualProperty": "Any Auto Renew Rate 30D Major Source"
+			          "ConceptualEntity": "retention_base",
+			          "ConceptualProperty": "Source 4 Share Shift"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "自动续费率": {
+			          "Source 4 用户占比": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "retention_base.total_change_pp": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "retention_base",
+			          "ConceptualProperty": "Total Change pp"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "D30 留存变化": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "整体净变化（Net Change）": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "retention_base.october_overall_d30": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "retention_base",
+			          "ConceptualProperty": "October Overall D30"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "10月 D30 留存": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "retention_base.baseline_overall_d30": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "retention_base",
+			          "ConceptualProperty": "Baseline Overall D30"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "基准期 D30 留存": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "retention_base.major_source_baseline_d30": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "retention_base",
+			          "ConceptualProperty": "Major Source Baseline D30"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "基准期": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "retention_base.major_source_october_d30": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "retention_base",
+			          "ConceptualProperty": "Major Source October D30"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "10月": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "retention_base.major_source_baseline_share": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "retention_base",
+			          "ConceptualProperty": "Major Source Baseline Share"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "基准期": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "retention_base.major_source_october_share": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "retention_base",
+			          "ConceptualProperty": "Major Source October Share"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "10月": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "retention_base.withinsource_effect_pp": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "retention_base",
+			          "ConceptualProperty": "Within-Source Effect pp"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "来源内部效应（Within-Source）": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

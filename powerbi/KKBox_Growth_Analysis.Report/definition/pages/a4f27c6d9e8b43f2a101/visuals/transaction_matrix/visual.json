@@ -2,37 +2,17 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "transaction_matrix",
   "position": {
-    "x": 640,
-    "y": 445.47112462006083,
-    "z": 9000,
-    "height": 180.91185410334347,
-    "width": 600.12158054711244,
-    "tabOrder": 9000
+    "x": 450,
+    "y": 445,
+    "z": 8450,
+    "height": 165,
+    "width": 380,
+    "tabOrder": 8450
   },
   "visual": {
-    "visualType": "matrix",
+    "visualType": "card",
     "query": {
       "queryState": {
-        "Rows": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "transaction_features"
-                    }
-                  },
-                  "Property": "Transaction Source Group CN"
-                }
-              },
-              "queryRef": "transaction_features.Transaction Source Group CN",
-              "nativeQueryRef": "Transaction Source Group CN",
-              "active": true,
-              "displayName": "来源"
-            }
-          ]
-        },
         "Values": {
           "projections": [
             {
@@ -40,102 +20,88 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "transaction_features"
+                      "Entity": "retention_base"
                     }
                   },
-                  "Property": "30D Transaction Rate Major Source"
+                  "Property": "Within-Source Effect pp"
                 }
               },
-              "queryRef": "transaction_features.30D Transaction Rate Major Source",
-              "nativeQueryRef": "30D Transaction Rate Major Source",
+              "queryRef": "retention_base.Within-Source Effect pp",
+              "nativeQueryRef": "Within-Source Effect pp",
               "active": true,
-              "displayName": "30天交易率",
-              "format": "0.00%"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "transaction_features"
-                    }
-                  },
-                  "Property": "Paying User Rate Major Source"
-                }
-              },
-              "queryRef": "transaction_features.Paying User Rate Major Source",
-              "nativeQueryRef": "Paying User Rate Major Source",
-              "active": true,
-              "displayName": "付费率",
-              "format": "0.00%"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "transaction_features"
-                    }
-                  },
-                  "Property": "Avg 30D Revenue Major Source"
-                }
-              },
-              "queryRef": "transaction_features.Avg 30D Revenue Major Source",
-              "nativeQueryRef": "Avg 30D Revenue Major Source",
-              "active": true,
-              "displayName": "30天平均收入",
-              "format": "#,0.00"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "transaction_features"
-                    }
-                  },
-                  "Property": "Any Auto Renew Rate 30D Major Source"
-                }
-              },
-              "queryRef": "transaction_features.Any Auto Renew Rate 30D Major Source",
-              "nativeQueryRef": "Any Auto Renew Rate 30D Major Source",
-              "active": true,
-              "displayName": "自动续费率",
-              "format": "0.00%"
+              "displayName": "来源内部效应（Within-Source）",
+              "format": "0.00\"pp\""
             }
           ]
         }
       }
     },
     "objects": {
-      "rowHeaders": [
+      "labels": [
         {
-          "properties": {}
-        }
-      ],
-      "values": [
-        {
-          "properties": {}
-        }
-      ],
-    "columnHeaders": [
-      {
-        "properties": {}
-      }
-    ],
-    "subTotals": [
-      {
-        "properties": {
-          "rowSubtotals": {
-            "expr": {
-              "Literal": {
-                "Value": "false"
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "2L"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "20L"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#188977'"
+                    }
+                  }
+                }
               }
             }
           }
         }
-      }
-    ]
+      ],
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [
@@ -151,14 +117,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'主要来源30天订阅表现'"
+                  "Value": "'来源内部效应（Within-Source）'"
                 }
               }
             },
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'Segoe UI'"
+                  "Value": "'Microsoft YaHei UI'"
                 }
               }
             },
@@ -266,71 +232,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "e7add2efc0a12e6dd756",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "transaction_features"
-              }
-            },
-            "Property": "Transaction Source Group CN"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "b938c10f07b291c07a92",
+        "name": "codex_measure_within-source_effect_pp",
         "field": {
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "transaction_features"
+                "Entity": "retention_base"
               }
             },
-            "Property": "30D Transaction Rate Major Source"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "26416f78d1eae57a7c29",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "transaction_features"
-              }
-            },
-            "Property": "Paying User Rate Major Source"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "66af10cbfe987149aa64",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "transaction_features"
-              }
-            },
-            "Property": "Avg 30D Revenue Major Source"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "28b2fb376b528e5ea55b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "transaction_features"
-              }
-            },
-            "Property": "Any Auto Renew Rate 30D Major Source"
+            "Property": "Within-Source Effect pp"
           }
         },
         "type": "Advanced"

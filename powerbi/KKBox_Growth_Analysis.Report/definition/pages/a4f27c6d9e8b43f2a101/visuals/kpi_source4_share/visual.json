@@ -23,13 +23,13 @@
                       "Entity": "retention_base"
                     }
                   },
-                  "Property": "Source 4 Share Oct 7-31"
+                  "Property": "October Overall D30"
                 }
               },
-              "queryRef": "retention_base.Source 4 Share Oct 7-31",
-              "nativeQueryRef": "Source 4 Share Oct 7-31",
+              "queryRef": "retention_base.October Overall D30",
+              "nativeQueryRef": "October Overall D30",
               "active": true,
-              "displayName": "Source 4 Share Oct 7-31",
+              "displayName": "10月 D30 留存",
               "format": "0.00%"
             }
           ]
@@ -106,14 +106,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'来源4占比'"
+                  "Value": "'10月 D30 留存'"
                 }
               }
             },
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'Segoe UI'"
+                  "Value": "'Microsoft YaHei UI'"
                 }
               }
             },
@@ -221,7 +221,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "93302064ba5568709abf",
+        "name": "codex_measure_october_overall_d30",
         "field": {
           "Measure": {
             "Expression": {
@@ -229,7 +229,7 @@
                 "Entity": "retention_base"
               }
             },
-            "Property": "Source 4 Share Oct 7-31"
+            "Property": "October Overall D30"
           }
         },
         "type": "Advanced"

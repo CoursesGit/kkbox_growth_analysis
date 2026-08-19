@@ -23,14 +23,14 @@
                       "Entity": "retention_base"
                     }
                   },
-                  "Property": "Source 4 Users Oct 7-31"
+                  "Property": "Baseline Overall D30"
                 }
               },
-              "queryRef": "retention_base.Source 4 Users Oct 7-31",
-              "nativeQueryRef": "Source 4 Users Oct 7-31",
+              "queryRef": "retention_base.Baseline Overall D30",
+              "nativeQueryRef": "Baseline Overall D30",
               "active": true,
-              "displayName": "Source 4 Users Oct 7-31",
-              "format": "#,0"
+              "displayName": "基准期 D30 留存",
+              "format": "0.00%"
             }
           ]
         }
@@ -106,14 +106,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'来源4新增用户'"
+                  "Value": "'基准期 D30 留存'"
                 }
               }
             },
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'Segoe UI'"
+                  "Value": "'Microsoft YaHei UI'"
                 }
               }
             },
@@ -223,5 +223,23 @@
       "value": "kpi_source4_users",
       "name": "codexVisualId"
     }
-  ]
+  ],
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "codex_measure_baseline_overall_d30",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "retention_base"
+              }
+            },
+            "Property": "Baseline Overall D30"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
 }

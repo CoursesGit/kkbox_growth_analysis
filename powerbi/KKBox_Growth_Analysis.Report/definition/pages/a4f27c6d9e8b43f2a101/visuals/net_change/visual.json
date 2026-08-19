@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "early_usage_matrix",
+  "name": "net_change",
   "position": {
-    "x": 40,
+    "x": 860,
     "y": 445,
-    "z": 8040,
+    "z": 8860,
     "height": 165,
     "width": 380,
-    "tabOrder": 8040
+    "tabOrder": 8860
   },
   "visual": {
     "visualType": "card",
@@ -23,13 +23,13 @@
                       "Entity": "retention_base"
                     }
                   },
-                  "Property": "Source Mix Effect pp"
+                  "Property": "Total Change pp"
                 }
               },
-              "queryRef": "retention_base.Source Mix Effect pp",
-              "nativeQueryRef": "Source Mix Effect pp",
+              "queryRef": "retention_base.Total Change pp",
+              "nativeQueryRef": "Total Change pp",
               "active": true,
-              "displayName": "来源结构效应（Source Mix）",
+              "displayName": "整体净变化（Net Change）",
               "format": "0.00\"pp\""
             }
           ]
@@ -80,7 +80,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#D97706'"
+                      "Value": "'#B45309'"
                     }
                   }
                 }
@@ -117,7 +117,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'来源结构效应（Source Mix）'"
+                  "Value": "'整体净变化（Net Change）'"
                 }
               }
             },
@@ -232,7 +232,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "codex_measure_source_mix_effect_pp",
+        "name": "codex_measure_total_change_pp",
         "field": {
           "Measure": {
             "Expression": {
@@ -240,7 +240,7 @@
                 "Entity": "retention_base"
               }
             },
-            "Property": "Source Mix Effect pp"
+            "Property": "Total Change pp"
           }
         },
         "type": "Advanced"
@@ -249,7 +249,7 @@
   },
   "annotations": [
     {
-      "value": "early_usage_matrix",
+      "value": "net_change",
       "name": "codexVisualId"
     }
   ]

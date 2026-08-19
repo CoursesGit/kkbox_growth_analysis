@@ -23,14 +23,13 @@
                       "Entity": "retention_base"
                     }
                   },
-                  "Property": "Source 4 D30 Oct 7-31"
+                  "Property": "Source 4 Share Shift"
                 }
               },
-              "queryRef": "retention_base.Source 4 D30 Oct 7-31",
-              "nativeQueryRef": "Source 4 D30 Oct 7-31",
+              "queryRef": "retention_base.Source 4 Share Shift",
+              "nativeQueryRef": "Source 4 Share Shift",
               "active": true,
-              "displayName": "Source 4 D30 Oct 7-31",
-              "format": "0.00%"
+              "displayName": "Source 4 用户占比"
             }
           ]
         }
@@ -106,14 +105,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'来源4 D30留存率'"
+                  "Value": "'Source 4 用户占比'"
                 }
               }
             },
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'Segoe UI'"
+                  "Value": "'Microsoft YaHei UI'"
                 }
               }
             },
@@ -223,5 +222,23 @@
       "value": "kpi_source4_d30",
       "name": "codexVisualId"
     }
-  ]
+  ],
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "codex_measure_source_4_share_shift",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "retention_base"
+              }
+            },
+            "Property": "Source 4 Share Shift"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
 }

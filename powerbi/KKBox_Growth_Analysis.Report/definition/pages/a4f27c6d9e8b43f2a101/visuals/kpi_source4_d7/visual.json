@@ -23,14 +23,14 @@
                       "Entity": "retention_base"
                     }
                   },
-                  "Property": "Source 4 D7 Oct 7-31"
+                  "Property": "Total Change pp"
                 }
               },
-              "queryRef": "retention_base.Source 4 D7 Oct 7-31",
-              "nativeQueryRef": "Source 4 D7 Oct 7-31",
+              "queryRef": "retention_base.Total Change pp",
+              "nativeQueryRef": "Total Change pp",
               "active": true,
-              "displayName": "Source 4 D7 Oct 7-31",
-              "format": "0.00%"
+              "displayName": "D30 留存变化",
+              "format": "0.00\"pp\""
             }
           ]
         }
@@ -74,6 +74,17 @@
                   "Value": "true"
                 }
               }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#D97706'"
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -106,14 +117,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'来源4 D7留存率'"
+                  "Value": "'D30 留存变化'"
                 }
               }
             },
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'Segoe UI'"
+                  "Value": "'Microsoft YaHei UI'"
                 }
               }
             },
@@ -221,7 +232,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "83068ecf32bc433cfe09",
+        "name": "codex_measure_total_change_pp",
         "field": {
           "Measure": {
             "Expression": {
@@ -229,7 +240,7 @@
                 "Entity": "retention_base"
               }
             },
-            "Property": "Source 4 D7 Oct 7-31"
+            "Property": "Total Change pp"
           }
         },
         "type": "Advanced"
