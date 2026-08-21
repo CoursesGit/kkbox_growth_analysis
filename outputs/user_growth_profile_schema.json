@@ -1,0 +1,99 @@
+{
+  "table": "user_growth_profile",
+  "grain": "one row per msno",
+  "analysis_window": {
+    "start": "2015-07-01",
+    "end": "2015-10-16"
+  },
+  "columns": [
+    {
+      "name": "msno",
+      "dtype": "string",
+      "nullable": false
+    },
+    {
+      "name": "registration_date",
+      "dtype": "datetime64[ns]",
+      "nullable": false
+    },
+    {
+      "name": "registered_via",
+      "dtype": "Int16",
+      "nullable": false
+    },
+    {
+      "name": "activated_flag",
+      "dtype": "Int8",
+      "nullable": true
+    },
+    {
+      "name": "d1_retained",
+      "dtype": "Int8",
+      "nullable": true
+    },
+    {
+      "name": "d3_retained",
+      "dtype": "Int8",
+      "nullable": true
+    },
+    {
+      "name": "d7_retained",
+      "dtype": "Int8",
+      "nullable": true
+    },
+    {
+      "name": "first_7_active_days",
+      "dtype": "Int8",
+      "nullable": true
+    },
+    {
+      "name": "first_7_play_count",
+      "dtype": "Int64",
+      "nullable": true
+    },
+    {
+      "name": "first_7_total_secs",
+      "dtype": "Float64",
+      "nullable": true
+    },
+    {
+      "name": "activation_eligible_flag",
+      "dtype": "Int8",
+      "nullable": false
+    },
+    {
+      "name": "d1_eligible_flag",
+      "dtype": "Int8",
+      "nullable": false
+    },
+    {
+      "name": "d3_eligible_flag",
+      "dtype": "Int8",
+      "nullable": false
+    },
+    {
+      "name": "d7_eligible_flag",
+      "dtype": "Int8",
+      "nullable": false
+    },
+    {
+      "name": "first_7_eligible_flag",
+      "dtype": "Int8",
+      "nullable": false
+    },
+    {
+      "name": "data_as_of_date",
+      "dtype": "datetime64[s]",
+      "nullable": false
+    }
+  ],
+  "metric_definitions": {
+    "activated_flag": "1 if at least one log exists from Day0 through Day6; NULL if that window is immature",
+    "d1_retained": "1 if a log exists exactly on registration_date + 1 day; NULL if immature",
+    "d3_retained": "1 if a log exists exactly on registration_date + 3 days; NULL if immature",
+    "d7_retained": "1 if a log exists exactly on registration_date + 7 days; NULL if immature",
+    "first_7_active_days": "distinct active dates from Day0 through Day6; NULL if immature",
+    "first_7_play_count": "Day0-Day6 sum of num_25 + num_50 + num_75 + num_985 + num_100; NULL if immature",
+    "first_7_total_secs": "Day0-Day6 sum of total_secs with negative values replaced by zero; NULL if immature"
+  }
+}

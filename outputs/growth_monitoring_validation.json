@@ -1,0 +1,47 @@
+{
+  "analysis_window": {
+    "start": "2015-07-01",
+    "end": "2015-10-16",
+    "days": 108
+  },
+  "total_registered_users": 504684,
+  "overall_daily_statistics": {
+    "mean": 4673.0,
+    "std_population": 1807.2502132613884,
+    "median": 3903.0,
+    "min": 2974,
+    "min_date": "2015-09-10",
+    "max": 12413,
+    "max_date": "2015-10-09"
+  },
+  "break_date_vs_pre": {
+    "total_daily_delta": 3051.8333333333335,
+    "total_daily_pct_change": 0.8041368407184578,
+    "source4_daily_delta": 5166.666666666667,
+    "source4_share_change_pp": 75.19654754720736,
+    "source4_increment_contribution": 1.6929714379334826,
+    "non_source4_daily_delta": -2114.8333333333335
+  },
+  "post_break_vs_pre": {
+    "total_daily_delta": 5393.722222222223,
+    "total_daily_pct_change": 1.4212082619706354,
+    "source4_daily_delta": 7427.222222222223,
+    "source4_share_change_pp": 80.48287441274958,
+    "source4_increment_contribution": 1.3770123703482444,
+    "non_source4_daily_delta": -2033.5000000000002
+  },
+  "break_and_post_vs_pre": {
+    "total_daily_delta": 5159.533333333335,
+    "total_daily_pct_change": 1.3595011198454179,
+    "source4_daily_delta": 7201.166666666667,
+    "source4_share_change_pp": 80.07866790612884,
+    "source4_increment_contribution": 1.3957011616037622,
+    "non_source4_daily_delta": -2041.6333333333334
+  },
+  "persistence": {
+    "post_break_days": 9,
+    "post_break_days_above_pre_daily_average": 9,
+    "post_break_source4_share_min": 0.7651655522436156,
+    "post_break_source4_share_max": 0.8674080410607357
+  }
+}

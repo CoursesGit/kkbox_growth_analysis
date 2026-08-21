@@ -1,0 +1,14 @@
+{
+  "historical_mature_users": 442029,
+  "post_anomaly_cohort_users_all_sources": 26892,
+  "post_anomaly_source4_users": 20876,
+  "all_historical_rows_d7_eligible": true,
+  "all_post_rows_d7_eligible": true,
+  "main_sources": [
+    3,
+    4,
+    7,
+    9
+  ],
+  "statistical_method": "Two-sided pooled two-proportion z test; unpooled Wald 95% confidence interval for p(Source4)-p(comparator)."
+}

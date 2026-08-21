@@ -1,0 +1,50 @@
+{
+  "rows": 504684,
+  "unique_msno": 504684,
+  "duplicate_msno": 0,
+  "registration_date_min": "2015-07-01",
+  "registration_date_max": "2015-10-16",
+  "matched_log_rows": 3315158,
+  "first7_log_rows": 1097195,
+  "negative_total_secs_set_to_zero": 155,
+  "active_days_out_of_range": 0,
+  "negative_output_play_count": 0,
+  "negative_output_total_secs": 0,
+  "eligibility_counts": {
+    "activation_eligible_flag": 453566,
+    "d1_eligible_flag": 496501,
+    "d3_eligible_flag": 479203,
+    "d7_eligible_flag": 442029,
+    "first_7_eligible_flag": 453566
+  },
+  "null_rule_checks": {
+    "activated_flag": {
+      "non_null_when_ineligible": 0,
+      "null_when_eligible": 0
+    },
+    "d1_retained": {
+      "non_null_when_ineligible": 0,
+      "null_when_eligible": 0
+    },
+    "d3_retained": {
+      "non_null_when_ineligible": 0,
+      "null_when_eligible": 0
+    },
+    "d7_retained": {
+      "non_null_when_ineligible": 0,
+      "null_when_eligible": 0
+    },
+    "first_7_active_days": {
+      "non_null_when_ineligible": 0,
+      "null_when_eligible": 0
+    },
+    "first_7_play_count": {
+      "non_null_when_ineligible": 0,
+      "null_when_eligible": 0
+    },
+    "first_7_total_secs": {
+      "non_null_when_ineligible": 0,
+      "null_when_eligible": 0
+    }
+  }
+}

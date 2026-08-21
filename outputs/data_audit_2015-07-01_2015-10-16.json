@@ -1,0 +1,100 @@
+{
+  "scope": {
+    "start": "2015-07-01",
+    "end": "2015-10-16"
+  },
+  "included_files": [
+    "members_v3.csv",
+    "user_logs.csv",
+    "transactions.csv"
+  ],
+  "excluded_files": [
+    "user_logs_v2.csv",
+    "transactions_v2.csv",
+    "train_v2.csv"
+  ],
+  "tables": {
+    "members_v3.csv": {
+      "rows_full": 6769473,
+      "rows_window": 504684,
+      "columns": [
+        "msno",
+        "city",
+        "bd",
+        "gender",
+        "registered_via",
+        "registration_init_time"
+      ],
+      "date_field": "registration_init_time",
+      "date_min": "2004-03-26",
+      "date_max": "2017-04-29",
+      "unique_users_full": 6769473,
+      "unique_users_window": 504684,
+      "grain": "one row per registered user (msno)",
+      "quality": {
+        "missing_msno": 0,
+        "duplicate_msno_rows_beyond_first": 0,
+        "duplicate_msno_users": 0,
+        "invalid_registration_dates": 0,
+        "missing_registered_via": 0
+      }
+    },
+    "user_logs.csv": {
+      "rows_full": 392106543,
+      "rows_window": 47544997,
+      "columns": [
+        "msno",
+        "date",
+        "num_25",
+        "num_50",
+        "num_75",
+        "num_985",
+        "num_100",
+        "num_unq",
+        "total_secs"
+      ],
+      "date_field": "date",
+      "date_min": "2015-01-01",
+      "date_max": "2017-02-28",
+      "unique_users_full": 5234111,
+      "unique_users_window": 1359381,
+      "grain": "one row per user-date (msno + date)",
+      "quality": {
+        "missing_msno_full": null,
+        "negative_total_secs_full": 61493,
+        "negative_total_secs_window": 40621,
+        "missing_total_secs_full": 0,
+        "missing_total_secs_window": 0,
+        "nonfinite_total_secs_full": 0,
+        "nonfinite_total_secs_window": 0,
+        "duplicate_user_date_window": 0,
+        "duplicate_check_note": "Previously exact-audited over 2015-07-01 to 2015-11-30: 68,947,581 rows and 68,947,581 unique msno+date; therefore the contained target window also has zero duplicate user-date records."
+      }
+    },
+    "transactions.csv": {
+      "rows_full": 21547746,
+      "rows_window": 2543772,
+      "columns": [
+        "msno",
+        "payment_method_id",
+        "payment_plan_days",
+        "plan_list_price",
+        "actual_amount_paid",
+        "is_auto_renew",
+        "transaction_date",
+        "membership_expire_date",
+        "is_cancel"
+      ],
+      "date_field": "transaction_date",
+      "date_min": "2015-01-01",
+      "date_max": "2017-02-28",
+      "unique_users_full": 2363626,
+      "unique_users_window": 896191,
+      "grain": "one row per transaction event; multiple rows per user and date are allowed",
+      "quality": {
+        "invalid_transaction_dates": 0,
+        "availability": "Available as auxiliary data; recent cohorts are right-censored, so it is not used for core conclusions in this phase."
+      }
+    }
+  }
+}

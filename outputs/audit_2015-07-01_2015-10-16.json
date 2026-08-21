@@ -1,0 +1,120 @@
+{
+  "audit": {
+    "members_v3.csv": {
+      "bytes": 427921437,
+      "columns": [
+        "msno",
+        "city",
+        "bd",
+        "gender",
+        "registered_via",
+        "registration_init_time"
+      ],
+      "rows": 6769473,
+      "time_min": "2004-03-26",
+      "time_max": "2017-04-29",
+      "unique_users": 6769473,
+      "duplicate_msno": 0
+    },
+    "train_v2.csv": {
+      "bytes": 45635134,
+      "columns": [
+        "msno",
+        "is_churn"
+      ],
+      "rows": 970960
+    },
+    "transactions.csv": {
+      "bytes": 1729298376,
+      "columns": [
+        "msno",
+        "payment_method_id",
+        "payment_plan_days",
+        "plan_list_price",
+        "actual_amount_paid",
+        "is_auto_renew",
+        "transaction_date",
+        "membership_expire_date",
+        "is_cancel"
+      ],
+      "rows": 21547746,
+      "time_min": "2015-01-01",
+      "time_max": "2017-02-28"
+    },
+    "transactions_v2.csv": {
+      "bytes": 115394513,
+      "columns": [
+        "msno",
+        "payment_method_id",
+        "payment_plan_days",
+        "plan_list_price",
+        "actual_amount_paid",
+        "is_auto_renew",
+        "transaction_date",
+        "membership_expire_date",
+        "is_cancel"
+      ],
+      "rows": 1431009,
+      "time_min": "2015-01-01",
+      "time_max": "2017-03-31"
+    },
+    "user_logs.csv": {
+      "bytes": 30514081415,
+      "columns": [
+        "msno",
+        "date",
+        "num_25",
+        "num_50",
+        "num_75",
+        "num_985",
+        "num_100",
+        "num_unq",
+        "total_secs"
+      ],
+      "rows": 392106543,
+      "time_min": "2015-01-01",
+      "time_max": "2017-02-28"
+    },
+    "user_logs_v2.csv": {
+      "bytes": 1431465728,
+      "columns": [
+        "msno",
+        "date",
+        "num_25",
+        "num_50",
+        "num_75",
+        "num_985",
+        "num_100",
+        "num_unq",
+        "total_secs"
+      ],
+      "rows": 18396362,
+      "time_min": "2017-03-01",
+      "time_max": "2017-03-31"
+    }
+  },
+  "window": {
+    "members_users": 504684,
+    "members_rows": 504684,
+    "log_rows": 47544997,
+    "log_users": 1359381,
+    "eligible_d7_users": 442029,
+    "negative_secs_first7": 155,
+    "transactions": {
+      "transactions.csv": {
+        "window_rows": 2543772,
+        "window_users": 896191
+      },
+      "transactions_v2.csv": {
+        "window_rows": 25709,
+        "window_users": 4604
+      }
+    }
+  },
+  "ab": {
+    "source4_d7_baseline": 0.041284617174773094,
+    "mde": 0.003,
+    "n_per_arm_ceil": 71431,
+    "n_total": 142862
+  }
+}
